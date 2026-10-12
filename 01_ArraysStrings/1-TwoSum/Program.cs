@@ -1,4 +1,5 @@
-﻿public class Solution
+﻿//EASY
+public class Solution
 {
     public int[] TwoSum(int[] nums, int target) //[2,7,11,15]
     {
