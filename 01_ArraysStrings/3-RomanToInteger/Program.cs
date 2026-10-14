@@ -12,17 +12,17 @@ public class Solution
 {
     public int RomanToInt(string s)
     {
-        if (s == null)
+        if (s == null) // checking string for null
             return 0;
 
-        int answer = 0;
-        s = s.ToUpper();
-        char[] symbols = s.ToCharArray();
-        for (int a = 0; a < symbols.Length; a++)
+        int answer = 0; // our final answer 
+        s = s.ToUpper(); // upper our string it is need to avoid smt like small word "mcmxciv" instead of "MCMXCIV" etc
+        char[] symbols = s.ToCharArray(); // seperate our string into latters 
+        for (int a = 0; a < symbols.Length; a++) 
         {
 
-            if (a + 1 < symbols.Length) // solving the minus before our main colculations 
-            {
+            if (a + 1 < symbols.Length) // cheking for mistakes for example second char could be out of array limits it is need to avoid mistakes 
+            {// solving the minus before our main colculations 
                 if (symbols[a] == 'C' && symbols[a + 1] == 'M')
                     answer -= 200;
                 if (symbols[a] == 'X' && symbols[a + 1] == 'C')
@@ -38,7 +38,7 @@ public class Solution
             }
 
             switch (symbols[a])// Main colcultions
-            {
+            { // translator Roman char to int 
                 case 'I':
                     answer += 1;
                     break;
